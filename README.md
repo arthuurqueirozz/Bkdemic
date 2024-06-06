@@ -1,6 +1,6 @@
 # README - Truffle + React Box
 
-## Descrição Geral
+## Descrição
 
 Este projeto desenvolve um Sistema de Registros Acadêmicos Baseado em Blockchain utilizando Truffle e React, com o objetivo de criar uma plataforma segura e imutável para o gerenciamento de registros acadêmicos. Ele garante a autenticidade e a integridade dos diplomas e históricos acadêmicos, facilitando a verificação destes documentos de maneira confiável e acessível, enquanto enfrenta o desafio de assegurar a privacidade dos dados dos estudantes, garantindo que apenas informações relevantes sejam acessíveis sem comprometer a confidencialidade.
 
@@ -52,10 +52,6 @@ Para iniciar o frontend, navegue até a pasta `client` e execute: `npm start`
 ## Testes
 
 Os testes para os contratos inteligentes estão localizados na pasta `truffle/test`. Eles podem ser executados usando: `truffle test`
-
-## Contribuições
-
-Contribuições são bem-vindas. Para contribuir, você pode clonar este repositório, criar um novo branch com suas modificações e abrir um pull request.
 
 ## Licença
 
