@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Web3 from "web3";
 import AcademicRecords from "./contracts/AcademicRecords.json";
+import './App.css';
 
 const App = () => {
   const [web3, setWeb3] = useState(null);
@@ -20,7 +21,7 @@ const App = () => {
         const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
         const accounts = await web3.eth.requestAccounts();
         const networkId = await web3.eth.net.getId();
-        1337;
+        // 1337;
         console.log("Network ID:", networkId);
 
         const deployedNetwork = AcademicRecords.networks[networkId];
@@ -77,70 +78,70 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Academic Records Management</h1>
+      <h1>Sistema de Registros Acadêmicos</h1>
       <h3>Usando conta: {accounts.length ? accounts[0] : ""}</h3>
       <div>
-        <h2>Add Record</h2>
+        <h2>Adicionar Registro:</h2>
         <input
           type="text"
           value={studentId}
           onChange={(e) => setStudentId(e.target.value)}
-          placeholder="Student ID"
+          placeholder="Matrícula"
         />
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Name"
+          placeholder="Nome"
         />
         <input
           type="text"
           value={course}
           onChange={(e) => setCourse(e.target.value)}
-          placeholder="Course"
+          placeholder="Curso"
         />
         <input
           type="text"
           value={grade}
           onChange={(e) => setGrade(e.target.value)}
-          placeholder="Grade"
+          placeholder="Nota"
         />
         <input
           type="text"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          placeholder="Date"
+          placeholder="Data"
         />
-        <button onClick={addRecord}>Add Record</button>
+        <button onClick={addRecord}>Adicionar</button>
       </div>
       <div>
-        <h2>Get Record</h2>
+        <h2>Buscar Registro:</h2>
         <input
           type="text"
           value={studentId}
           onChange={(e) => setStudentId(e.target.value)}
-          placeholder="Student ID"
+          placeholder="Matrícula"
         />
-        <button onClick={getRecord}>Get Record</button>
+        <button onClick={getRecord}>Buscar Registro</button>
         {record && (
           <div>
-            <p>Name: {record.name}</p>
-            <p>Course: {record.course}</p>
-            <p>Grade: {record.grade}</p>
-            <p>Date: {record.date}</p>
-            <p>Validated: {isValidated ? "Yes" : "No"}</p>
+            <p>Nome: {record.name}</p>
+            <p>Curso: {record.course}</p>
+            <p>Nota: {record.grade}</p>
+            <p>Data: {record.date}</p>
+            <p>Validado: {isValidated ? "Yes" : "No"}</p>
           </div>
         )}
       </div>
       <div>
-        <h2>Validate Record</h2>
+        <h2>Validar Registro:</h2>
         <input
           type="text"
           value={studentId}
           onChange={(e) => setStudentId(e.target.value)}
-          placeholder="Student ID"
+          placeholder="Matrícula"
         />
-        <button onClick={validateRecord}>Validate Record</button>
+        <button onClick={validateRecord}>Validar Registro</button>
       </div>
     </div>
   );
