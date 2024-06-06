@@ -1,39 +1,62 @@
-# React Truffle Box
+# README - Truffle + React Box
 
-This box comes with everything you need to start using Truffle to write, compile, test, and deploy smart contracts, and interact with them from a React app.
+## Descrição Geral
 
-## Installation
+Este projeto desenvolve um Sistema de Registros Acadêmicos Baseado em Blockchain utilizando Truffle e React, com o objetivo de criar uma plataforma segura e imutável para o gerenciamento de registros acadêmicos. Ele garante a autenticidade e a integridade dos diplomas e históricos acadêmicos, facilitando a verificação destes documentos de maneira confiável e acessível, enquanto enfrenta o desafio de assegurar a privacidade dos dados dos estudantes, garantindo que apenas informações relevantes sejam acessíveis sem comprometer a confidencialidade.
 
-First ensure you are in an empty directory.
+## Estrutura do Projeto
 
-Run the `unbox` command using 1 of 2 ways.
+O projeto está dividido em duas partes principais:
 
-```sh
-# Install Truffle globally and run `truffle unbox`
-$ npm install -g truffle
-$ truffle unbox react
-```
+### Frontend
 
-```sh
-# Alternatively, run `truffle unbox` via npx
-$ npx truffle unbox react
-```
+O frontend é construído utilizando React. Ele inclui várias páginas e componentes que interagem com o contrato inteligente no backend. O código principal está localizado na pasta `client/src`.
 
-Start the react dev server.
+#### Componentes Principais
 
-```sh
-$ cd client
-$ npm start
-```
+- `App.js`: Componente principal que contém a lógica de interação com o contrato inteligente.
+- `Contract.js`: Mostra e permite interação com o contrato inteligente.
+- `ContractBtns.js`: Permite leitura e escrita no contrato inteligente através de botões.
+- `Demo.js`: Componente para demonstração do contrato em ação.
+- `Footer.js`, `Intro.js`, `Title.js`, entre outros, que ajudam a melhorar a experiência do usuário e fornecer informações úteis.
 
-From there, follow the instructions on the hosted React app. It will walk you through using Truffle and Ganache to deploy the `SimpleStorage` contract, making calls to it, and sending transactions to change the contract's state.
+### Backend
 
-## FAQ
+O backend é composto por contratos inteligentes escritos em Solidity. O principal contrato chamado `AcademicRecords` gerencia registros acadêmicos. Ele está localizado na pasta `truffle/contracts`.
 
-- __How do I use this with Ganache (or any other network)?__
+#### Funcionalidades do Contrato `AcademicRecords`
 
-  The Truffle project is set to deploy to Ganache by default. If you'd like to change this, it's as easy as modifying the Truffle config file! Check out [our documentation on adding network configurations](https://trufflesuite.com/docs/truffle/reference/configuration/#networks). From there, you can run `truffle migrate` pointed to another network, restart the React dev server, and see the change take place.
+- Adicionar e validar registros acadêmicos.
+- Buscar registros.
+- Checar se um registro está validado.
 
-- __Where can I find more resources?__
+## Configuração
 
-  This Box is a sweet combo of [Truffle](https://trufflesuite.com) and [Webpack](https://webpack.js.org). Either one would be a great place to start!
+### Requisitos
+
+- Node.js
+- Truffle
+- Ganache
+- MetaMask (para interação com a rede Ethereum)
+
+### Instalação e Configuração
+
+1. Instalação do Truffle e Ganache: `npm install -g truffle ganache`
+2. Execução do Ganache: `ganache`
+3. Compilar e Migrar Contratos para Ganache: `cd truffle` `truffle migrate --network development`
+
+### Execução
+
+Para iniciar o frontend, navegue até a pasta `client` e execute: `npm start`
+
+## Testes
+
+Os testes para os contratos inteligentes estão localizados na pasta `truffle/test`. Eles podem ser executados usando: `truffle test`
+
+## Contribuições
+
+Contribuições são bem-vindas. Para contribuir, você pode clonar este repositório, criar um novo branch com suas modificações e abrir um pull request.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT.
